@@ -8,23 +8,16 @@ import java.sql.*;
  */
 public class sqlquery {
     private static Connection con;
-    private static Statement stmt;
 
-    public static Statement sqlDrive(String stringDriver, String url) throws ClassNotFoundException, SQLException {
+    public static Connection sqlDrive(String stringDriver, String url) throws ClassNotFoundException, SQLException {
 
         Class.forName(stringDriver);
         con = DriverManager.getConnection(url);
         if (con == null) return null;
-        stmt = con.createStatement();
-        return stmt;
+        return con;
     }
 
-    public static ResultSet rs (String query) throws SQLException{
-        return stmt.executeQuery(query);
-    }
-
-    public static void close() throws SQLException {
-        stmt.close();
+    public static void close(Connection con) throws SQLException {
         con.close();
     }
 }

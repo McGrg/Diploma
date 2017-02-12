@@ -4,68 +4,68 @@ package ru.mysite.web.servlets;
  * Created by MSI GT70 on 12.02.2017.
  */
 public class ConstructionSites {
-    private static int conssiteId;
-    private static String conssiteCity;
-    private static String conssiteStreet;
-    private static String conssiteBilding;
-    private static String startDate;
-    private static String finishDate;
-    private static String manager;
+    private int conssiteId;
+    private String conssiteCity;
+    private String conssiteStreet;
+    private String conssiteBilding;
+    private String startDate;
+    private String finishDate;
+    private String manager;
 
-    public static int getConssiteId() {
+    public int getConssiteId() {
         return conssiteId;
     }
 
-    public static void setConssiteId(int conssiteId) {
-        ConstructionSites.conssiteId = conssiteId;
+    public void setConssiteId(int conssiteId) {
+        this.conssiteId = conssiteId;
     }
 
-    public static String getConssiteCity() {
+    public String getConssiteCity() {
         return conssiteCity;
     }
 
-    public static void setConssiteCity(String conssiteCity) {
-        ConstructionSites.conssiteCity = conssiteCity;
+    public void setConssiteCity(String conssiteCity) {
+        this.conssiteCity = conssiteCity;
     }
 
-    public static String getConssiteStreet() {
+    public String getConssiteStreet() {
         return conssiteStreet;
     }
 
-    public static void setConssiteStreet(String conssiteStreet) {
-        ConstructionSites.conssiteStreet = conssiteStreet;
+    public void setConssiteStreet(String conssiteStreet) {
+        this.conssiteStreet = conssiteStreet;
     }
 
-    public static String getConssiteBilding() {
+    public String getConssiteBilding() {
         return conssiteBilding;
     }
 
-    public static void setConssiteBilding(String conssiteBilding) {
-        ConstructionSites.conssiteBilding = conssiteBilding;
+    public void setConssiteBilding(String conssiteBilding) {
+        this.conssiteBilding = conssiteBilding;
     }
 
-    public static String getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public static void setStartDate(String startDate) {
-        ConstructionSites.startDate = startDate;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
-    public static String getFinishDate() {
+    public String getFinishDate() {
         return finishDate;
     }
 
-    public static void setFinishDate(String finishDate) {
-        ConstructionSites.finishDate = finishDate;
+    public void setFinishDate(String finishDate) {
+        this.finishDate = finishDate;
     }
 
-    public static String getManager() {
+    public String getManager() {
         return manager;
     }
 
-    public static void setManager(String manager) {
-        ConstructionSites.manager = manager;
+    public void setManager(String manager) {
+        this.manager = manager;
     }
 }
 
