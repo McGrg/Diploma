@@ -1,0 +1,33 @@
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.0.M17
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Jan 10 2017 20:59:20 UTC
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.0.0
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 7
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.1
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_112\jre
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_112-b15
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17\conf\logging.properties
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\Studies\Diploma\Testservlet\localtest\apache-tomcat-9.0.0.M17\temp
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.10 using APR version 1.5.2.
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+12-Feb-2017 10:40:43.485 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+12-Feb-2017 10:40:44.025 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2j  26 Sep 2016)
+12-Feb-2017 10:40:44.150 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+12-Feb-2017 10:40:44.276 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+12-Feb-2017 10:40:44.276 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+12-Feb-2017 10:40:44.292 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+12-Feb-2017 10:40:44.292 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1112 ms
+12-Feb-2017 10:40:44.307 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+12-Feb-2017 10:40:44.307 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.0.M17
+12-Feb-2017 10:40:44.761 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+12-Feb-2017 10:40:44.800 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [http-nio-8080]
+12-Feb-2017 10:40:44.807 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler [ajp-nio-8009]
+12-Feb-2017 10:40:44.807 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 517 ms
