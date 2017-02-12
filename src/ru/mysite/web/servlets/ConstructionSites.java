@@ -64,5 +64,12 @@ public class ConstructionSites {
     public void setManager(String manager) {
         this.manager = manager;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + this.getConssiteId() + " " +  this.getConssiteCity().toString() + " "
+                + this.getConssiteStreet().toString() + " " + this.getConssiteBilding() + " "
+                + this.getStartDate() + " " + this.getFinishDate() + " " + this.getManager();
+    }
 }
 

@@ -4,21 +4,33 @@ import java.sql.*;
 import java.util.*;
 
 class DB {
-//    private static Connection con = null;
+    private String strDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    private String strURL = "jdbc:sqlserver://192.168.1.249:54874;databaseName=Diploma;integratedSecurity=true;";
+    private Connection con = null;
 
-//    public DB(String stringDriver, String url) {
+    public DB() {
+        try {
+            con = sqlquery.sqlDrive(strDriver, strURL);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+//    public Statement stat(){
+//        Statement stmt=null;
 //        try {
-//            con = sqlquery.sqlDrive(stringDriver, url);
-//        } catch (Exception e) {
+//            stmt = con.createStatement();
+//        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
+//        return stmt;
 //    }
-//
-    public List<ConstructionSites> getSites(Statement stmt) {
+
+    public List<ConstructionSites> getSites() {
         List<ConstructionSites> list = null;
         try {
             list = new LinkedList<>();
-//            Statement sttm = con.createStatement();
+            Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM [Diploma].[Master].[ConstructionSite]");
             while (rs.next()) {
                 ConstructionSites site = new ConstructionSites();
@@ -38,14 +50,14 @@ class DB {
         }
         return list;
     }
-//
-//    public void Close(){
-//        try {
-//            con.close();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
+    public void close(){
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

@@ -1,11 +1,10 @@
 package ru.mysite.web.servlets;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.*;
-
+import java.util.List;
 
 
 public class SimpleServlet extends javax.servlet.http.HttpServlet {
@@ -16,8 +15,7 @@ public class SimpleServlet extends javax.servlet.http.HttpServlet {
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
 //        try {
-//            DB db = new DB("com.microsoft.sqlserver.jdbc.SQLServerDriver",
-//                    "jdbc:sqlserver://192.168.1.249:54874;databaseName=Diploma;integratedSecurity=true;");
+//            DB db = new DB();
 //            List<ConstructionSites> sites = db.getSites();
 //            String base= new Gson().toJson(sites);
 //                PrintWriter out = response.getWriter();
@@ -27,19 +25,16 @@ public class SimpleServlet extends javax.servlet.http.HttpServlet {
 //        } catch (Exception e) {
         DB db = new DB();
         try {
-            Statement stmt = sqlquery.sqlDrive("com.microsoft.sqlserver.jdbc.SQLServerDriver",
-                    "jdbc:sqlserver://192.168.1.249:54874;databaseName=Diploma;integratedSecurity=true;");
             String base = "";
-            if (stmt != null) {
-                List<ConstructionSites> sites = db.getSites(stmt);
-                ResultSet rs = sqlquery.rs("SELECT * FROM [Diploma].[Master].[Materials]");
-                while (rs.next()) {
-                    base = rs.getString("mater_name") + ":" + rs.getString(1);
+            if (db != null) {
+                List<ConstructionSites> sites = db.getSites();
+                for (ConstructionSites site : sites) {
+                    response.getWriter().write(site.toString());
                 }
-                sqlquery.close();
-                response.setContentType("text/html; charset = Windows-1251");
+                String gson= new Gson().toJson(sites);
+                db.close();
                 PrintWriter out = response.getWriter();
-                out.println(base);
+                out.println(gson);
                 out.close();
             }
         } catch (Exception e) {
