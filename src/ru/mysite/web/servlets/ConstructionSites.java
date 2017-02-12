@@ -1,8 +1,5 @@
 package ru.mysite.web.servlets;
 
-/**
- * Created by MSI GT70 on 12.02.2017.
- */
 public class ConstructionSites {
     private int conssiteId;
     private String conssiteCity;

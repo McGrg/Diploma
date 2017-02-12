@@ -1,30 +1,25 @@
 package ru.mysite.web.servlets;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.LinkedList;
-import java.util.List;
+import java.sql.*;
+import java.util.*;
 
 class DB {
-    private Connection con = null;
+//    private static Connection con = null;
 
-    public DB(String stringDriver, String url) {
-        try {
-            Connection con = sqlquery.sqlDrive(stringDriver, url);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public List<ConstructionSites> getSites() {
+//    public DB(String stringDriver, String url) {
+//        try {
+//            con = sqlquery.sqlDrive(stringDriver, url);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+    public List<ConstructionSites> getSites(Statement stmt) {
         List<ConstructionSites> list = null;
         try {
             list = new LinkedList<>();
-            Statement sttm = null;
-            sttm = con.createStatement();
-            ResultSet rs = sttm.executeQuery("SELECT * FROM [Diploma].[Master].[ConstructionSite]");
+//            Statement sttm = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM [Diploma].[Master].[ConstructionSite]");
             while (rs.next()) {
                 ConstructionSites site = new ConstructionSites();
                 site.setConssiteId(rs.getInt("cons_site_id"));
@@ -36,19 +31,21 @@ class DB {
                 site.setManager(rs.getString("manager"));
                 list.add(site);
             }
+            rs.close();
+            stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return list;
     }
-
-    public void Close(Connection con){
-        try {
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//
+//    public void Close(){
+//        try {
+//            con.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
 }
 
