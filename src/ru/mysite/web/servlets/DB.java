@@ -4,34 +4,18 @@ import java.sql.*;
 import java.util.*;
 
 class DB {
-    private String strDriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private String strURL = "jdbc:sqlserver://192.168.1.249:54874;databaseName=Diploma;integratedSecurity=true;";
+
     private Connection con = null;
 
-    public DB() {
-        try {
-            con = sqlquery.sqlDrive(strDriver, strURL);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public DB() throws SQLException, ClassNotFoundException {
+            con = sqlquerymssql.sqlDrive();
     }
 
-//    public Statement stat(){
-//        Statement stmt=null;
-//        try {
-//            stmt = con.createStatement();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return stmt;
-//    }
-
-    public List<ConstructionSites> getSites() {
+    public List<ConstructionSites> getSites() throws SQLException{
         List<ConstructionSites> list = null;
-        try {
             list = new LinkedList<>();
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM [Diploma].[Master].[ConstructionSite]");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM diploma.master.constructionsite;");
             while (rs.next()) {
                 ConstructionSites site = new ConstructionSites();
                 site.setConssiteId(rs.getInt("cons_site_id"));
@@ -45,20 +29,12 @@ class DB {
             }
             rs.close();
             stmt.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
         return list;
     }
 
-    public void close(){
-        try {
+    public void close()throws SQLException{
             con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
-
 }
 
 
